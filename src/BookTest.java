@@ -16,7 +16,7 @@ public class BookTest {
         }
 
         System.out.println("Tổng giá của 6 cuốn sách: " + totalPrice);
-        System.out.println("Những cuốn sách có giá > 1000:");
+        System.out.println("    Những cuốn sách có giá > 1000:");
         for (Book book : books) {
             if (book.getPrice() > 1000) {
                 System.out.println("Tên sách: " + book.getName() + ", Giá: " + book.getPrice() + ", Tác giả: " + book.getAuthor());

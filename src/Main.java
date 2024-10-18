@@ -1,32 +1,22 @@
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter value a (should not be 0):");
-        int a = sc.nextInt();
-        if (a == 0) {
-            System.out.println("Value of a must not be 0.");
-            return; // Kết thúc chương trình nếu a = 0
-        }
+        // 3 cuốn ProgrammingBook
+        ProgrammingBook pBook1 = new ProgrammingBook(101, "Author 1", 1200, "Java 1", "Java", "ab");
+        ProgrammingBook pBook2 = new ProgrammingBook(102, "Author 2", 800, "Java 2", "Java", "ab");
+        ProgrammingBook pBook3 = new ProgrammingBook(103, "Author 3", 1600, "Java 3", "Java", "ab");
 
-        System.out.println("Enter value b:");
-        int b = sc.nextInt();
 
-        System.out.println("Enter value c:");
-        int c = sc.nextInt();
+        // 3 cuốn FictionBook
+        FictionBook fBook1 = new FictionBook(104, "Author 3", 2000, "Doraemon", "Hoạt Hình");
+        FictionBook fBook2 = new FictionBook(105, "Author4", 600, "Viễn Tưởng 1", "Viễn tưởng");
+        FictionBook fBook3 = new FictionBook(106, "Author 5", 700, "Cabybara", "Hoạt Hình");
 
-        QuadraticEquation user = new QuadraticEquation(a, b, c);
+        // tính tổng 6 cuốn sách
+        double totalAmount = fBook1.getAmount() + fBook2.getAmount() + fBook3.getAmount() + pBook1.getAmount() + pBook2.getAmount() + pBook3.getAmount();
+        System.out.println("The total of 6 books is : " + totalAmount);
 
-        double delta = user.getDiscriminant();
 
-        if (delta > 0) {
-            System.out.println("The equation has two roots: " + user.getRoot1() + " and " + user.getRoot2());
-        } else if (delta == 0) {
-            System.out.println("The equation has one root: " + user.getRoot1());
-        } else {
-            System.out.println("The equation has no roots");
-        }
+
     }
 }
